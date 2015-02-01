@@ -1,7 +1,7 @@
 MITS
 ====
 
-aka Mutual Information Text Segmentation
+aka Mutual Information Term Segmentation
 
 
 Formula

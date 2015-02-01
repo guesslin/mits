@@ -22,6 +22,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
-# For Editor temp files
+
+# Editor temp files
 *.swp
 ~*
