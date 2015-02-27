@@ -8,27 +8,49 @@ import (
 //	"math"
 )
 
-func CountSingleWord(sentence string) (words map[string]int) {
-	words = make(map[string]int)
+// CountSingleWord count frequency of each single rune word appear
+// in single file
+func CountSingleWord(sentence []rune) (single map[string]int) {
+	single = make(map[string]int)
 	for _, word := range sentence {
-		words[string(word)] += 1
+		single[string(word)] += 1
 	}
 	return
 }
 
-/*
-func FilterStopWords(stopword, sentence string) string {
-	return ""
-}
-*/
-
-func CalcMI(single, twin map[string]int) (mi float64) {
+// CountTwinWord
+func CountTwinWord(sentence []rune) (twin map[string]int) {
+	twin = make(map[string]int)
+	for i, _ := range sentence {
+		if i == len(sentence)-1 {
+			break // last word of sentence
+		}
+		two := sentence[i : i+2]
+		twin[string(two)] += 1
+	}
 	return
 }
 
-/*
-func MutualInformation(word1, word2 rune) float64 {
-	fmt.Println("hello")
-	return 0.01
+// CountTermFreq count frequency of single word and twin-word term
+func CountTermFreq(sentence []rune) (single, twin map[string]int) {
+	single = make(map[string]int)
+	twin = make(map[string]int)
+	for i, word := range sentence {
+		single[string(word)] += 1
+		if i < len(sentence)-1 {
+			two := sentence[i : i+2]
+			twin[string(two)] += 1
+		}
+	}
+	return
 }
-*/
+
+// CalcMI use single word frequency and twin word term frequency to
+// calculate mutual information value of continue term
+// mutual information value formula:
+//                    p(x[i], x[i+1]) * log(p(x[i], x[i+1])
+// MI(x[i], x[i+1]) = -------------------------------------
+//                           (p(x[i]) * p(x[i+1])))
+func CalcMI(single, twin map[string]int) (mi float64) {
+	return
+}

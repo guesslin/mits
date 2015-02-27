@@ -1,3 +1,5 @@
+[![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
+
 MITS
 ====
 
@@ -16,8 +18,3 @@ Author
 ======
 
 * Yu-han Lin, guesslin1986@gmail.com
-
-GoDoc
-=====
-
-[![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
