@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
+[![Build Status](https://travis-ci.org/guesslin/mits.svg)](https://travis-ci.org/guesslin/mits) [![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
 
 MITS
 ====
