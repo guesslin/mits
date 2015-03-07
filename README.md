@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/guesslin/mits.svg)](https://travis-ci.org/guesslin/mits) [![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
+[![Build Status](https://travis-ci.org/guesslin/mits.svg)](https://travis-ci.org/guesslin/mits) [![Coverage Status](https://coveralls.io/repos/guesslin/mits/badge.svg)](https://coveralls.io/r/guesslin/mits) [![GoDoc](https://godoc.org/github.com/guesslin/mits?status.svg)](https://godoc.org/github.com/guesslin/mits)
 
 MITS
 ====
