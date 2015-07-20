@@ -90,3 +90,39 @@ func Segment(sentence []rune, theta float64) (terms []string) {
 	}
 	return
 }
+
+// SegmentSens segment sentences
+func SegmentSens(sentences [][]rune, theta float64) (terms []string) {
+	terms = make([]string, 0)
+	single := make(map[string]int)
+	twin := make(map[string]int)
+	s_len, t_len := 0, 0
+	for _, sentence := range sentences {
+		ts, tt, ss, st := CountTermFreq(sentence)
+		s_len += ss
+		t_len += st
+		for i, c := range ts {
+			single[i] += c
+		}
+		for i, c := range tt {
+			twin[i] += c
+		}
+	}
+	for _, sentence := range sentences {
+		var term = string(sentence[0])
+		for i := 1; i <= len(sentence)-1; i++ {
+			x2 := string(sentence[i-1 : i+1])
+			posofx2 := float64(twin[x2]) / float64(t_len)
+			posofxi := float64(single[string(sentence[i-1])]) / float64(s_len)
+			posofxj := float64(single[string(sentence[i])]) / float64(s_len)
+			mi := posofx2 * math.Log(posofx2/(posofxi*posofxj))
+			if mi < theta {
+				terms = append(terms, term)
+				term = string(sentence[i])
+			} else {
+				term += string(sentence[i])
+			}
+		}
+	}
+	return
+}
