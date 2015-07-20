@@ -56,7 +56,7 @@ func TestCountTermFreq(t *testing.T) {
 		//		{sentence: []rune("是不是這樣的日子裡，你才會這樣的想起我"), singleResult: map[string]int{"會": 1, "的": 2, "日": 1, "子": 1, "才": 1, "想": 1, "我": 1, "這": 2, "不": 1, "樣": 2, "裡": 1, "，": 1, "是": 2, "起": 1, "你": 1}},
 	}
 	for _, c := range cases {
-		single, twin := CountTermFreq(c.sentence)
+		single, twin, _, _ := CountTermFreq(c.sentence)
 		eq1 := reflect.DeepEqual(single, c.singleResult)
 		eq2 := reflect.DeepEqual(twin, c.twinResult)
 		if !eq1 {
