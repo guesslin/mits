@@ -3,6 +3,9 @@ go:
  - release
  - tip
 
+env:
+ - DATE=`date -u "+%F %T UTC"`
+
 install:
  - go get github.com/axw/gocov/gocov
  - go get github.com/mattn/goveralls
@@ -12,3 +15,5 @@ script:
  - go test -v ./...
  - $HOME/gopath/bin/goveralls -service=travis-ci
 
+after_success:
+ - echo $DATE
